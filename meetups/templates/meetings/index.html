@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+All Meetups
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'meetings/styles/base.css' %}">
+  <link rel="stylesheet" href="{% static 'meetings/styles/all-meetups.css' %}">
+{% endblock %}
+
+{% block content %}
+  {% include 'meetings/includes/meetup_item.html' %}
+{% endblock %}

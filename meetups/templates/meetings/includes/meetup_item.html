@@ -1,0 +1,30 @@
+<header id="main-header">
+  <nav><a href="/meetups" id="main-logo">Django Meetups</a></nav>
+  <h1>We got meetups coming up</h1>
+  <p>Find the one that best suits your needs!!</p>
+</header>
+<main>
+  <section>
+    <h2>Upcoming Meetups</h2>
+    <ol>
+      {% for meet in meetups %}
+        <li class="meetup-item">
+          <article>
+            <div class="meetup-summary">
+              <div class="meetup-image">
+                <img src="{{ meet.image.url }}" alt="{{ meet.title }}">
+              </div>
+              <div class="meetup-details">
+                <h3>{{ meet.title }}</h3>
+                <addres>{{ meet.location }}</addres>
+              </div>
+            </div>
+            <div class="meetup-actions">
+              <a href="{% url 'meetup-detail' meet.slug %}" class="btn">More Details</a>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+    </ol>
+  </section>
+</main>
